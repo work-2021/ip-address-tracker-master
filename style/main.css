@@ -1,0 +1,185 @@
+@font-face {
+  font-family: "Rubik" ;
+  src: url("../font/Rubik.ttf") ;
+}
+
+* {
+  box-sizing: border-box ;
+  font-family: "Rubik" ;
+  font-size: 18px ;
+}
+
+body {
+  margin: 0 ;
+  position: relative ;
+}
+
+.information {
+  height: 300px ;
+  background-image: url("../images/pattern-bg.png") ;
+  background-size: 480% ;
+  background-repeat: no-repeat ;
+  background-position:center ;
+  padding: 20px ;
+}
+.information h1 {
+  text-align: center ;
+  font-size: 24px ;
+  color: white ;
+  margin: 0 0 20px ;
+}
+.information form {
+  display: flex ;
+  justify-content: center ;
+  align-items: stretch ;
+}
+.information form input ,
+.information form button {
+  padding: 10px 20px ;
+  box-shadow: 1px 1px 25px 2px #45452d99 ;
+}
+.information form input {
+  padding: 10px 20px 10px 10px ;
+  border: none ;
+  width: 85% ;
+  background-color: white ;
+  border-radius: 6px 0 0 6px ;
+  position: relative ;
+  z-index: 33 ;
+}
+.information form input:focus {
+  outline: none ;
+  box-shadow: 0 0 0 2px #24242d99 , 1px 1px 25px 2px #45452d99 ;
+}
+.information form input:focus + button {
+  box-shadow: 0 0 0 2px #24242d , 1px 1px 25px 2px #45452d99 ;
+}
+.information form input::placeholder {
+  font-size: 15px ;
+}
+.information form button {
+  display: flex ;
+  border-radius: 0 6px 6px 0 ;
+  justify-content: center ;
+  align-items: center ;
+  width: 15% ;
+  border: none ;
+  background-color: #24242d ;
+}
+.information form button:hover {
+  background-color: rgb(70,70,70) ;
+}
+.show-info {
+  width: calc(100% - 42px) ;
+  box-shadow: 1px 1px 25px 2px #45452d99 ;
+  border-radius: 6px ;
+  margin-top: 15px ;
+  padding: 20px ;
+  position: absolute ;
+  background-color: #FFF ;
+  text-align: center ;
+  top: 130px ;
+  left: 50% ;
+  transform: translateX(-50%) ;
+  z-index: 54 ;
+}
+.show-info p {
+  margin: 10px 0 ;
+  color: #9F9F9F ;
+  text-transform: uppercase ;
+  letter-spacing: 2px ;
+  font-weight: bolder ;
+  font-size: 12px ;
+}
+.show-info p:first-of-type {
+  margin-top: 0 ;
+}
+.show-info span {
+  font-size: 18px ;
+  font-weight: bold ;
+  display: block ;
+  width: 100% ;
+  min-height: 25px ;
+}
+.show-info span.sp-load {
+  margin: 0 auto ;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 4px solid #f3f3f3 ;
+  border-top-color: #d93025;
+  animation: 1s load linear infinite;
+}
+.map {
+  height: 500px;
+  position: relative ;
+  z-index: 20 ;
+}
+.mapboxgl-popup-content {
+  width: fit-content ;
+  padding: 10px ;
+}
+@keyframes load {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
+.attribution ,
+.attribution a {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+@media (min-width: 375px){
+  .information {
+    height: 230px ;
+    background-size: cover ;
+  }
+  .container {
+    width: 46%;
+    margin: auto;
+  }
+  .show-info {
+    width: 80% ;
+    display: flex ;
+    flex-wrap: wrap ;
+    justify-content: space-between ;
+    top: 160px ;
+    text-align: left ;
+  }
+  .show-info p {
+    width: 23% ;
+    margin: 0 ;
+    margin-bottom: 15px !important;
+    order: -1 ;
+    position: relative ;
+  }
+  .show-info p:not(:last-of-type):after {
+    content: "" ;
+    height: 60px ;
+    background-image: linear-gradient(to top,#EFEFEF,#D1D1D1,#B3B3B3) ;
+    border-radius: 10px ;
+    width: 1.2px ;
+    position: absolute ;
+    right: 0 ;
+    top: -5px ;
+  }
+  .show-info span {
+    width: 23% ;
+  }
+  .show-info span.sp-load {
+    margin-right: calc(23% - 30px);
+    margin-left: 0 ;
+    width: 30px;
+    height: 30px;
+  }
+}
