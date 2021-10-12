@@ -60,7 +60,7 @@ function myMapToShow(str, data) {
   mapboxgl.accessToken = 'pk.eyJ1IjoibXltYXAyMDIxc3NzIiwiYSI6ImNrdTcxd3o4cTUzeHgydW5xN2cwMmRkemwifQ.n21_GqmnobFKXxab5_Zz2g' ;
   let map = new mapboxgl.Map({container: str ,style: 'mapbox://styles/mapbox/streets-v11',zoom:13,center: [data.location.lng, data.location.lat]});
   const customMarker = document.createElement('div');
-  customMarker.style.backgroundImage = `url('../images/icon-location.svg')`;
+  customMarker.style.backgroundImage = `url('./images/icon-location.svg')`;
   customMarker.style.width = `46px`;
   customMarker.style.height = `56px`;
   customMarker.style.backgroundRepeat = 'no-repeat';
